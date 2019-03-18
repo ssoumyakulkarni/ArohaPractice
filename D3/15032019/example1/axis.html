@@ -40,23 +40,13 @@
         {"date":new Date(2012,0,6), "value": 6},
         {"date":new Date(2012,0,7), "value": 7},
         {"date":new Date(2012,0,8), "value": 8},
-
-        
-        
-        ];
+ ];
         
         
     var x_domain = d3.extent(data, function(d) { return d.date; }),
         y_domain = d3.extent(data, function(d) { return d.value; });
     
-    /* get
-    y_domain: Array[2]
-        0: 2
-        1: 33
-    x_domain: Array[2]
-        0: Sun Jan 01 2012 00:00:00 GMT+0000 (GMT)
-        1: Mon Jan 30 2012 00:00:00 GMT+0000 (GMT)
-    */
+    
     
     // display date format
     var  date_format = d3.time.format("%d %b");
@@ -71,9 +61,7 @@
     var yScale = d3.scale.linear()
         .domain(y_domain).nice()   // make axis end in round number
     .range([height - padding, padding]);   // map these to the chart height, less padding.  In this case 300 and 100
-             //REMEMBER: y axis range has the bigger number first because the y value of zero is at the top of chart and increases as you go down.
-        
-        
+            
     var xScale = d3.time.scale()
         .domain(x_domain)    // values between for month of january
         .range([padding, width - padding]);   // map these sides of the chart, in this case 100 and 600
@@ -102,10 +90,7 @@
         .attr("transform", "translate(0," + (height - padding) + ")")
         .call(xAxis);
         
-    // now rotate text on x axis
-    // solution based on idea here: https://groups.google.com/forum/?fromgroups#!topic/d3-js/heOBPQF3sAY
-    // first move the text left so no longer centered on the tick
-    // then rotate up to get 45 degrees.
+  
     vis.selectAll(".xaxis text")  // select all the text elements for the xaxis
       .attr("transform", function(d) {
          return "translate(" + this.getBBox().height*-2 + "," + this.getBBox().height + ")rotate(-45)";
