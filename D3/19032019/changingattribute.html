@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <Script src="https://d3js.org/d3.v3.min.js"></Script>
+</head>
+<body>
+    <div>
+        <img id="fimg" src="f1.jpg"/>
+    </div>
+    <div id="text" style="font-size:40px">This is an flower</div>
+    <div>
+        <button onclick="change('f1.png')">Change to fl</button>
+        <button onclick="change('f2.jpg')">Change to f2</button>
+        <button onclick="changecolor()">Change to f3</button>
+    </div>
+    <script >
+        function change(imgName){
+            d3.select("#fimg")
+            .attr("src",imgName)
+        }
+        function changeColor(){
+            let color=d3.select("#text")
+            .style("color")
+            if(color === "red"){
+            d3.select("#text")
+            .style("color","blue")}
+            else{
+                d3.select("#text")
+                .style("color","red")
+            }
+        }
+        </script>
+
+</body>
+</html>

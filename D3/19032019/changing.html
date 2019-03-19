@@ -1,0 +1,70 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Changing content</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascrpipt">
+            function change1(){
+               p=d3.select(".main_para")
+                p.text("change text")
+            }
+            
+             function change2()s{
+                d3.selectAll("p")
+                .text("New Text 2")
+            }
+            
+            function change3(){
+             d3.select("p")
+             .html("<b>test</b>normal")   
+            }
+            
+            function change4(){
+                d3.select("p")
+                .text()
+            }
+           
+        
+            </script> 
+
+</head>
+<body>
+    <p class="main_para">This is an example of paragraph</p>
+    <p>and this is second paragraph content</p>
+
+    <button onclick="change1()">change first paragraph</button></br>
+    <button onclick="change2()">change all paragraph</button></br>
+    <button onclick="change3()">change with HTML</button></br>
+    <button onclick="change4()">change with text</button>
+</body>
+
+
+
+</html> -->
+
+
+
+
+
+
+<html><title>chnage onclick</title>
+    <head>
+        <script scr="https://d3js.org/d3.v3.min.js">
+        </script>
+        
+    </head>
+    <body>
+            <p id="demo" onclick="myFunction()">Click me to change my text color.</p>
+
+            <script>
+            function myFunction() {
+              document.getElementById("demo").style.color = "red";
+            }
+            </script>
+          
+    </body>
+</html>
