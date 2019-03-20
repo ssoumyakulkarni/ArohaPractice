@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <script src="http://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+    <div id ="Container"></div>
+</body>
+    <script>
+    let Container =d3.select("#Container")
+    d3.csv("data.csv").then(function(data){
+       // write("Data is Available")
+        for (let client of data){
+            write(client.date)
+            write(client.close)
+        }
+        })
+        function write(text){
+            Container.append("div").text(text)
+        }
+        </script>
+
+</html>

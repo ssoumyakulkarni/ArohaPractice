@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Filter and sort data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <script src="http://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+  <div id="Container"></div>  
+</body>
+<script>
+let Container=d3.select("#Container")
+d3.csv("data.csv").then(function(data){
+    data.sort((a,b)=>{
+        return d3.ascending(a.date,b.date)
+    })
+    let filtereddata=data.filter(d=>{
+        return d.close < 200
+    })
+    showData(filtereddata)
+})
+function showData(clients){
+
+    for(let client of clients){
+        write(client.date +","+client.close)
+    }
+}function write(text){
+Container.append("div").text(text)
+}
+
+
+</script>
+</html>
