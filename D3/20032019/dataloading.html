@@ -15,8 +15,8 @@
     d3.csv("data.csv").then(function(data){
        // write("Data is Available")
         for (let client of data){
-            write(client.date)
-            write(client.close)
+            write(client.date + "   "+ "  "+client.close) 
+           
         }
         })
         function write(text){

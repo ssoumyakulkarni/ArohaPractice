@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learn D3.js</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+    </head>
+    <body>
+            <h2 style="    font-size: xx-large;
+            font-family: sans-serif;
+            ">Supplier wise purchase in Amount</h2>
+        <script>
+            d3.json("index.json", function(data){
+
+                console.log(data)
+                var width = 800,
+                    height = 600;
+
+                var d = data.map(function(i) {return i.Party_Name})
+
+                var x = d3.scaleBand()
+                    .domain(d)
+                    .range([50, 750]);
+
+                var y = d3.scaleLinear().
+                        domain([0, d3.max(data.map(function(d) {return d.Amount}))])
+                        .range([480, 50]);
+
+                var xaxis = d3.axisBottom()
+                            .scale(x);
+
+                var yaxis = d3.axisLeft()
+                            .scale(y);
+
+                var canvas = d3.select("body")
+                                .append("svg")
+                                .attr("width", 800)
+                                .attr("height", 600)
+
+                canvas.append("g")
+                            .attr("transform", "translate(50, 480)")
+                            .call(xaxis.ticks(10))
+                            .selectAll("text")	
+                            .style("text-anchor", "end")
+                            .style("text-size","200")
+                            .attr("dx", "-.8em")
+                            .attr("dy", ".15em")
+                            .attr("transform", "rotate(-65)");; 
+                
+                canvas.append("g")
+                        .attr("transform", "translate(100, 0)")
+                        .call(yaxis.tickFormat(d3.format('s')));
+                
+                canvas.selectAll("rect")
+                        .data(data)
+                        .enter()
+                        .append("rect")
+                        .attr('x', function(d) {return 60+x(d.Party_Name)})
+                        .attr('y', function(d) {return y(d.Amount)})
+                        .attr('width', x.bandwidth()-10)
+                        .attr('height', function(d) {return 480-y(d.Amount)})
+                        .attr("fill", "steelblue")
+
+
+                        canvas.selectAll("line")
+                        .data(data)
+                        .enter()
+                        .append("line")
+                        .attr(x)
+
+
+
+
+
+                            
+                            
+            })
+        //     var canvas = d3.select("body")
+        //                 .append("svg")
+        //                 .attr("width", 500)
+        //                 .attr("height", 500);
+
+        //     var bars = canvas.selectAll("rect")
+        //                 .data(dataArray)
+        //                 .enter()
+        //                     .append("rect")
+        //                     .attr("width", function(d) { return d*10 })
+        //                     .attr("height", 50)
+        //                     .attr("y", function(d, i) { return i*100 });
+        // </script>
+        
+    </body>
+</html>

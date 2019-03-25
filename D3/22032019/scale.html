@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+    <script src=""></script>
+    const KG_PER_POUND=0.45
+    const METER_PER_INCH=0.0254
+    let container =d3.select("#container")
+    d3.csv("data.csv").then(showData)
+     funtion write(text){
+         container.append("div").text(text)
+     }
+     function showData(clients){
+         let join=container.append("div").text()
+     }
+</head>
+<body>
+    
+</body>
+</html>

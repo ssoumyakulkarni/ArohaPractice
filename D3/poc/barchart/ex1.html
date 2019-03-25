@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style> /* set the CSS */
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 3px;
+  }
+  
+
+  .overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+
+.focus circle {
+  fill: #F1F3F3;
+  stroke: #6F257F;
+  stroke-width: 5px;
+}
+  
+.hover-line {
+  stroke: #6F257F;
+  stroke-width: 2px;
+  stroke-dasharray: 3,3;
+} 
+
+</style>
+
+
+
+
+<!-- load the d3.js library -->
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<body>
+ 
+      <text    style="
+      font-size: xx-large;
+      color: darkmagenta;
+      font-family: monospace;
+      text-align: center;
+    ">Supplier wise purchase in Amount</text>
+
+
+
+<script>
+
+var dataset = [
+  {
+    "key": "Adisseo Asia Pacific",
+    "value": 57487266
+  },
+  {
+    "key": "Kavi Protein And Feed",
+    "value": 56656610
+  },
+  {
+    "key": "Himalaya Drug Company",
+    "value":20393334
+  },
+  {
+    "key": "Virbac Animal Health",
+    "value": 16979000
+  },
+  {
+    "key": "Ventri Biologicals",
+    "value": 14224912
+  },
+  {
+    "key": "Elanco India",
+    "value": 13430796
+  },
+
+  {
+    "key": "Jubilant Life Sciences",
+    "value": 11669350
+  },
+  {
+    "key": "Care Cure",
+    "value": 11649393
+  }
+
+];
+
+
+// set the dimensions and margins of the graph
+var margin = {
+    top: 20,
+    right: 20,
+    bottom: 30,
+    left: 100
+  },
+  width = 900 - margin.left - margin.right,
+  height = 400 - margin.top - margin.bottom;
+
+// set the ranges
+var x = d3.scalePoint().range([0, width]);
+var y = d3.scalePoint().range([height, 0]);
+
+// define the line
+var valueline = d3.line()
+  .x(function(d) {
+    return x(d.key);
+  })
+  .y(function(d) {
+    return y(d.value);
+  });
+
+// append the svg obgect to the body of the page
+// appends a 'group' element to 'svg'
+// moves the 'group' element to the top left margin
+var svg = d3.select("body").append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform",
+    "translate(" + margin.left + "," + margin.top + ")");
+
+
+
+    d3.select("div").
+    attr("fill","red")
+
+function draw(data) {
+
+  data.forEach(function(d) {
+    d.value = +d.value;
+  });
+
+  data.sort(function(a, b) {
+    return a.value - b.value;
+  })
+
+  // Scale the range of the data
+  x.domain(data.map(function(d) {
+    return d.key;
+  }));
+  y.domain(data.map(function(d) {
+    return d.value;
+  }));
+
+
+  // Add the valueline path.
+  svg.append("path")
+    .datum(data)
+    .attr("class", "line")
+    .attr("d", valueline);
+
+  svg.append("g")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x));
+
+  // Add the Y Axis
+  svg.append("g")
+    .call(d3.axisLeft(y))
+    .on("mouseover",function(){
+      var xPos= d3.mouse(this)[0]-15;
+      var yPos= d3.mouse(this)[1]-55;
+      tooltip.attr("transform","translate("+xPos+","+yPos+")")
+      tooltip.select("text").text("ac" +":"+"dfs")
+    });
+
+
+
+
+ 
+
+var tooltip=svg.append("g")
+.attr("class",tooltip)
+.style("dispaly","none");
+tooltip.append("text")
+.attr("x",15)
+.attr("y","1.2em")
+.style("font-size","1.25em")
+.attr("font-weight","bold");
+}
+
+
+// trigger render
+draw(dataset);
+
+</script>
+</body>

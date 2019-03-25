@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    
+    <body>
+    
+        <button onclick="addNewClient()">Add</button>
+        <button onclick="removeClient()">Remove</button>
+        <div id="container"></div>
+    </body>
+    <script>
+    let container=d3.select("#container")
+    let clients=[{
+        Name:"client0"
+    }]
+    let count=1;
+
+    function addNewClient(){
+        
+        clients.push({Name:"Client"+count})
+        count=count+1
+        showData(clients)
+    }
+    function removeClient(){
+        clients=clients.slice(0,-1)
+        count-=1
+        showData(clients)
+    }
+    function showData(clients){
+        let join=container
+        container
+        .selectAll("div")
+        .data(clients)
+       join.enter()
+
+        .append("div")
+        .text(d=>d.Name + " -New")
+
+        join.exit().remove()
+        join.text(d=>d.Name+":Updated")
+    }
+    showData(clients)
+    </script>
+</head>
+<body>
+ 
+</body>
+</html>

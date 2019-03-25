@@ -1,0 +1,100 @@
+ <!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+   <div id="container"></div> 
+</body>
+<script>
+    let container=d3.select("#container")
+  d3.csv("data1.csv
+  ").then(showdata)
+
+  function write(text){
+      container.append("div").text(text)
+  }
+  function showdata(clients){
+      for(let client of clients){
+          write(client.Name+","+client.weight)
+      }
+  
+  
+  
+      write("------------------")
+      let weightSum=d3.sum(clients,
+      (d)=>d.weight)
+      write("Sum:"+weightSum)
+
+      let weightMean=d3.Mean(clients,
+      (d)=>d.weight)
+      write("Mean:"+weightMean)
+
+      let extent=d3.extent(clients,
+      d=>d.weight)
+      write("Extent:"+extent)
+  }
+</script>
+</html>
+
+ -->
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <script src="http://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+    <div id ="Container"></div>
+    </body>
+    <script>
+
+
+    let Container=d3.select("#Container")
+        d3.csv("data1.csv").then(showData)
+
+        function write(text){
+      Container.append("div").text(text)
+  }
+  function showData(clients){
+      for(let client of clients){
+          write(client.Name+","+client.weight)
+      }
+  }
+  write("------------------")
+  let weightSum=d3.sum(client,
+  (d)=>d.weight)
+  write("Sum:"+weightSum)
+  
+
+      let weightMean=d3.Mean(client,
+      (d)=>d.weight)
+      write("Mean:"+weightMean)
+
+      let extent=d3.extent(client,
+      d=>d.weight)
+      write("Extent:"+extent)
+        
+    </script>
+    
+
+</html>
