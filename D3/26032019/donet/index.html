@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <script>
+        
+        function donutChart()
+        {
+            d3.json("",function(data){
+                var radius=100;
+                var color=d3.scale.ordinal()
+                range(["red","orange","green","blue","indigo","violet"]);
+           
+           var canvas=d3.select(".donutChart")
+           .append("svg")
+           .append("width",1000)
+           .append("height",1000)
+
+           var group=canvas.append("g")
+           .attr("transform","tanslate(500,350)");
+
+            var arc=d3.svg.arc()
+            .innerRadius(150)
+            .outerRadius(radius);
+
+            var pie=d3.slayout.pie()
+            .value(function(d){
+                return d;
+            })
+           
+            })
+        }
+        
+        
+        </script>
+</body>
+</html>
