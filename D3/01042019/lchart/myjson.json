@@ -1,0 +1,113 @@
+[
+{
+    "Party_Name": "Adisseo Asia Pacific Pte Ltd",
+    "Amount": "57487266.00"
+
+},
+{
+    "Party_Name": "Kavi Protein And Feed Pvt Ltd",
+    "Amount": "56656610.04"
+
+},
+{
+    "Party_Name": "The Himalaya Drug Company",  
+    "Amount": "20393334.37"
+
+},
+
+{
+    "Party_Name": "Pioneer Jellice India (P) Ltd-Scr",
+    "Amount": "16979000.00"
+
+},
+{
+    "Party_Name": "Virbac Animal Health India Pvt Ltd",
+    "Amount": "14224912.36"
+
+},
+{
+    "Party_Name": "Intervet India Pvt Ltd",
+    "Amount": "13921982.55"
+
+},
+{
+    "Party_Name": "Ventri Biologicals Ltd",
+    "Amount": "13484092.92"
+
+},
+{
+    "Party_Name": "Elanco India Pvt Ltd",
+    "Amount": "13430796.15"
+
+},
+{
+    "Party_Name": "Jubilant Life Sciences Limited",
+    "Amount": "11669350.00"
+
+},
+{
+    "Party_Name": "Care Cure",
+    "Amount": "11649393.90"
+
+}
+]
+
+
+
+
+
+
+
+
+
+
+
+
+{
+    "result": [
+        {
+            "key": "April-2018",
+            "value": 56975192.91000037
+        },
+        {
+            "key": "August-2018",
+            "value": 38006945.62000019
+        },
+        {
+            "key": "December-2018",
+            "value": 38860575.85000017
+        },
+        {
+            "key": "February-2019",
+            "value": 16918749.550000012
+        },
+        {
+            "key": "January-2019",
+            "value": 39019692.35000027
+        },
+        {
+            "key": "July-2018",
+            "value": 40232950.50000022
+        },
+        {
+            "key": "June-2018",
+            "value": 46356945.970000274
+        },
+        {
+            "key": "May-2018",
+            "value": 55388226.810000286
+        },
+        {
+            "key": "November-2018",
+            "value": 40178174.07000013
+        },
+        {
+            "key": "October-2018",
+            "value": 35372536.59000018
+        },
+        {
+            "key": "September-2018",
+            "value": 35245473.17000014
+        }
+    ]
+}

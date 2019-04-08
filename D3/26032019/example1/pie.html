@@ -21,69 +21,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="" />
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
 </head>
 <body>
     <h2>Supplier wise purchase in amount</h2>
     <script>
         var width=850,height=500;
-        var colors=d3.scaleOrdinal(d3.schemeDark2)
+     // var colors=d3.scaleOrdinal(d3.category20c())
+     var colors = d3.scaleOrdinal(d3.schemeCategory10);
         var  svg=d3.select("body").append("svg")
         .attr("width",width).attr("height",height)
-        .style("background","pink")
+        .style("background","")
         
-        var details=[{
-    Party_Name: "Adisseo Asia Pacific Pte Ltd",
-    Amount: "57487266.00"
-
-},
-{
-    Party_Name: "Kavi Protein And Feed Pvt Ltd",
-    Amount: "56656610.04"
-
-},
-{
-    Party_Name: "The Himalaya Drug Company",  
-    Amount: "20393334.37"
-
-},
-
-{
-    Party_Name: "Pioneer Jellice India (P) Ltd-Scr",
-    Amount: "16979000.00"
-
-},
-{
-    Party_Name: "Virbac Animal Health India Pvt Ltd",
-    Amount: "14224912.36"
-
-},
-{
-    Party_Name: "Intervet India Pvt Ltd",
-    Amount: "13921982.55"
-
-},
-{
-    Party_Name: "Ventri Biologicals Ltd",
-    Amount: "13484092.92"
-
-},
-{
-    Party_Name: "Elanco India Pvt Ltd",
-    Amount: "13430796.15"
-
-},
-{
-    Party_Name: "Jubilant Life Sciences Limited",
-    Amount: "11669350.00"
-
-},
-{
-    Party_Name: "Care Cure",
-    Amount: "11649393.90"
-
-}
+        var details=[ {
+            "key": "quater-1",
+            "value": 158720365.68999895
+        },
+        {
+            "key": "quater-2",
+            "value": 113485369.29000033
+        },
+        {
+            "key": "quater-3",
+            "value": 114411286.50999978
+        },
+        {
+            "key": "quater-4",
+            "value": 55938441.900000416
+        }
 ]
-var data=d3.pie().sort(null).value(function(d){return d.Amount;})
+var data=d3.pie().sort(null).value(function(d){return d.value;})
 (details);
 console.log(data);
 var segments=d3.arc()
@@ -94,14 +61,14 @@ var segments=d3.arc()
     var sections=svg.append("g").attr("transform","translate(250,250)")
     .selectAll("path").data(data);
     sections.enter().append("path").attr("d",segments).attr("fill",function(d){
-        return colors(d.data.Amount)});
+        return colors(d.data.value)});
 
 
         var content=d3.select("g").selectAll("text").data(data);
         content.enter().append("text").each(function(d){
             var center=segments.centroid(d);
             d3.select(this).attr("x",center[0]).attr("y",center[1])
-            .text(d.data.Amount) 
+           // .text(d.data.Amount) 
             .style("text-anchor", "middle")
            .attr("transform", "rotate(-10)");
         });
@@ -121,7 +88,7 @@ var segments=d3.arc()
                return d.data.Party_Name;
            })
            .attr("fill",function(d){
-               return colors(d.data.Amount);})
+               return colors(d.data.value);})
                .attr("x",20)
                .attr("y", function(d, i) {return i*20+14;})
                .style("font-size", "15px");

@@ -1,0 +1,26 @@
+.axis {
+    font: 12px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+.centered-wrapper {
+  position: relative;
+  text-align: center;
+  
+}
+.h2
+{
+
+text-decoration: blue;
+text-decoration-line: underline;
+text-decoration-color: rgb(155, 127, 255);
+color: rgb(65, 42, 165);
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
