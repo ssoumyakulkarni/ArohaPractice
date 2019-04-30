@@ -58,7 +58,7 @@
     <body>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script>
-    d3.csv('data.csv', function(day_data) {
+    d3.csv('data1.csv', function(day_data) {
       var formatDate = d3.time.format("%Y-%m-%d");
       var bisectDate = d3.bisector(function(d) { return formatDate.parse(d['date']); }).left;
     

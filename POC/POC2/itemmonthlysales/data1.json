@@ -1,0 +1,48 @@
+{
+    "item montly sales ": [
+        {
+            "key": "April-2018",
+            "value": 9984906.030000001
+        },
+        {
+            "key": "August-2018",
+            "value": 2798981.88
+        },
+        {
+            "key": "December-2018",
+            "value": 4413203.7
+        },
+        {
+            "key": "February-2019",
+            "value": 1276093
+        },
+        {
+            "key": "January-2019",
+            "value": 4138092.75
+        },
+        {
+            "key": "July-2018",
+            "value": 3163326.65
+        },
+        {
+            "key": "June-2018",
+            "value": 4039134.57
+        },
+        {
+            "key": "May-2018",
+            "value": 7694866.21
+        },
+        {
+            "key": "November-2018",
+            "value": 5779997.82
+        },
+        {
+            "key": "October-2018",
+            "value": 4424531.66
+        },
+        {
+            "key": "September-2018",
+            "value": 3634087.43
+        }
+    ]
+}

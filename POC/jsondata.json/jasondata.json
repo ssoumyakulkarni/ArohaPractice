@@ -1,0 +1,209 @@
+
+
+1. Monthly Sales :
+
+{
+    "item montly sales ": [
+        {
+            "key": "April-2018",
+            "value": 9984906.030000001
+        },
+        {
+            "key": "August-2018",
+            "value": 2798981.88
+        },
+        {
+            "key": "December-2018",
+            "value": 4413203.7
+        },
+        {
+            "key": "February-2019",
+            "value": 1276093
+        },
+        {
+            "key": "January-2019",
+            "value": 4138092.75
+        },
+        {
+            "key": "July-2018",
+            "value": 3163326.65
+        },
+        {
+            "key": "June-2018",
+            "value": 4039134.57
+        },
+        {
+            "key": "May-2018",
+            "value": 7694866.21
+        },
+        {
+            "key": "November-2018",
+            "value": 5779997.82
+        },
+        {
+            "key": "October-2018",
+            "value": 4424531.66
+        },
+        {
+            "key": "September-2018",
+            "value": 3634087.43
+        }
+    ]
+}
+
+2. Party Sales:
+
+{
+    "item purchaed by customers": [
+        {
+            "name": "Anjani Poultry Farm Dvg",
+            "qty": 1450
+        },
+        {
+            "name": "Sahana Poultry Farm -Mulkalmuru",
+            "qty": 750
+        },
+        {
+            "name": "Cash",
+            "qty": 669
+        },
+        {
+            "name": "Sasidhara Poultry Farm (Dvg)",
+            "qty": 3600
+        },
+        {
+            "name": "Venkatadri Poultry Farm -S.Dr",
+            "qty": 300
+        },
+        {
+            "name": "Sneha Poultry Farm (Dvg)",
+            "qty": 3650
+        },
+        {
+            "name": "S.M Star Hatcheries",
+            "qty": 3900
+        },
+        {
+            "name": "S.L.N. Poultry Farm Cnp",
+            "qty": 875
+        },
+        {
+            "name": "Sri Jagadamba Poultry Farm",
+            "qty": 2100
+        },
+        {
+            "name": "Sanmuga Sai Poultry Farm",
+            "qty": 450
+        },
+        {
+            "name": "Venkateshwara Poultry Farm(Jagdeesh )",
+            "qty": 825
+        }
+    ]
+}
+
+3. party monthly sales:
+
+{
+    "party montly sales ": [
+        {
+            "key": "April-2018",
+            "value": 351289.32
+        },
+        {
+            "key": "August-2018",
+            "value": 417545.5800000002
+        },
+        {
+            "key": "December-2018",
+            "value": 561038.4600000001
+        },
+        {
+            "key": "February-2019",
+            "value": 267540.07000000007
+        },
+        {
+            "key": "January-2019",
+            "value": 363402.4200000001
+        },
+        {
+            "key": "July-2018",
+            "value": 391045.8500000001
+        },
+        {
+            "key": "June-2018",
+            "value": 389902.79
+        },
+        {
+            "key": "May-2018",
+            "value": 428122.3900000002
+        },
+        {
+            "key": "November-2018",
+            "value": 576715.36
+        },
+        {
+            "key": "October-2018",
+            "value": 280250.1400000001
+        },
+        {
+            "key": "September-2018",
+            "value": 338584.7900000001
+        }
+    ]
+}
+
+4. party purchase items:
+
+{
+    "party purchaed by items qty": [
+        {
+            "name": "VAC-SAFE 10GM TABLET",
+            "qty": 34
+        },
+        {
+            "name": "Indo.Nd Killed 1000 Ds  - Y",
+            "qty": 3
+        },
+        {
+            "name": "SAFE GUARD BIO 5  LTR",
+            "qty": 88
+        },
+        {
+            "name": "Sokrena W.S 500 ML",
+            "qty": 3
+        },
+        {
+            "name": "LIV 52 PROTECH LIQ 5 LTR",
+            "qty": 97
+        },
+        {
+            "name": "Relax 5ltr",
+            "qty": 6
+        },
+        {
+            "name": "MAREKS VEB 1000 DS",
+            "qty": 27
+        },
+        {
+            "name": "Kohrsolin Th 500 ML",
+            "qty": 49
+        },
+        {
+            "name": "Agrimin    10 Kg",
+            "qty": 22
+        },
+        {
+            "name": "ELECTRO CARE PLUS 200 GM",
+            "qty": 23
+        },
+        {
+            "name": "Nubiotic Sp-250 Gm",
+            "qty": 16
+        },
+        {
+            "name": "GROVIPLEX 5 LTR",
+            "qty": 58
+        }
+    ]
+} 

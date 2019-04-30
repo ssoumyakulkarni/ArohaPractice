@@ -3,10 +3,10 @@ body{
     overflow: hidden;
 }
 
-/* rect{
-    fill: steelblue;    
+rect{
+    /* fill: rgb(103, 70, 180);     */
     opacity: 0.5;
-} */
+}
 
 text{
     font-family: sans-serif;
@@ -18,11 +18,11 @@ text{
     
 }
 
-.tick line {
+ .tick line {
     stroke: #C0C0BB;
     opacity: 0.4;
     
-}
+} 
 
 .axis-label {
     font-size: 2.0em;

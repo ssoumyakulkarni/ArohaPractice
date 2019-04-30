@@ -3,10 +3,10 @@ body{
     overflow: hidden;
 }
 
-/* rect{
-    fill: steelblue;    
+rect{
+    /* fill: rgb(103, 70, 180);     */
     opacity: 0.5;
-} */
+}
 
 text{
     font-family: sans-serif;

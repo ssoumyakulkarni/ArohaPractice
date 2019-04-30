@@ -1,0 +1,21 @@
+.line {
+    fill: none;
+    stroke: #999999;
+    stroke-width: 2px;
+  }
+  
+  .selected{
+    stroke: #EF5285;
+  }
+  .svg{
+    align-content: center;
+    border: #EF5285;
+    border-block-end-width: 0in;
+    text-align: center;
+  }
+  #transform{
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    text-decoration-color:rebeccapurple;
+  }

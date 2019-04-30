@@ -1,0 +1,31 @@
+<html>
+    <head><title>monthly/quaterly/yearly sales</title>
+<style></style>
+  <script src="https://d3js.org/d3.v4.js"></script>
+</head>
+<body>
+    <div id="country"></div>
+    <div id="year"></div>
+    <div id="graph"></div>
+    <script>
+        //set margin
+        var margin = {top: 60, right: 100, bottom: 20, left: 80},
+            width = 850 - margin.left - margin.right,
+            height = 370 - margin.top - margin.bottom;
+
+            // Parse the month variable
+            var parseMonth = d3.timeParse("%b");
+            var formatMonth = d3.timeFormat("%b");
+
+            var formatYear = d3.timeFormat("%Y");
+            var parseYear = d3.timeParse("%Y");
+            
+            // Set the ranges
+            var x = d3.scaleTime().domain([parseMonth("Jan"), parseMonth("Dec")]).range([0, width]);
+            var y = d3.scaleLinear().range([height, 0]);    
+            
+            
+    </script>
+
+</body>
+</html>

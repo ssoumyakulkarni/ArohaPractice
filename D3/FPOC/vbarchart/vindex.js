@@ -86,17 +86,7 @@ const svg = d3.select('svg');
 
             };    
 
-            d3.json("vnew.json", function(data){
-                // var data1 = [];
-                // data.result.forEach(d => { d.value = +d.value;
-                //                            d.key = d.key;                            
-                // })
-
-                // var data1 = [];
-                // data.forEach(function(d) {
-                //             data1.push(d.key);
-                //             });
-
-                console.log(data.result)
+            d3.json("https://api.myjson.com/bins/1abza0", function(data){
+                 console.log(data.result)
                 render(data.result);
         });

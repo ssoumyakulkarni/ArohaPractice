@@ -5,7 +5,6 @@ const svg = d3.select('svg');
 
 
             const render = data => {
-
                 const xvalue =  d => d.value;
                 const yvalue = d => d.key;
 
@@ -13,10 +12,10 @@ const svg = d3.select('svg');
                 var innerwidth = width - margin.left - margin.right;
                 var innerheight = height - margin.top - margin.bottom;
 
+                //var color = d3.scale.category10();
+                var color = d3.scaleOrdinal(d3.schemeCategory10);
                 const g = svg.append('g')
                             .attr('transform', "translate(" + margin.left + "," + margin.top + ")");
-
-
                 console.log(data)
 
                 const xscale = d3.scaleLinear()
@@ -30,10 +29,10 @@ const svg = d3.select('svg');
                             .tickFormat(xaxistickformat).tickSize(-innerheight+10))
                             .attr('transform', "translate(0 ," + innerheight + ")");
 
-                    xaxisG.select('.domain')
+                xaxisG.select('.domain')
                         .remove();
 
-                    xaxisG.append('text')
+                xaxisG.append('text')
                     .attr("class", "axis-label")
                     .attr('y', 40)
                     .attr('x', innerwidth / 2)
@@ -63,33 +62,26 @@ const svg = d3.select('svg');
                     .attr("transform", "rotate(-90)")
                     .text('Customer Names');
 
-
-                
-
-                g.selectAll('rect')
+            g.selectAll('rect')
                 .data(data)
                 .enter()
                 .append('rect')
                 .attr('y', d => yscale(yvalue(d)))
                 .attr('width', d => xscale(xvalue(d)))
-                .attr('height', yscale.bandwidth());
-
+                .attr('height', yscale.bandwidth())
+                .style('fill', function(d){
+                    return color(d.data.value);})
+                     ;
                 g.append('text')
                     .attr("class", "title")
                     .attr('y', -5)
                     .attr('x', innerwidth/2)
-                    .text("Top 10 Sale's items")
+                    .text("Item Monthly Sale's")
 
                 console.log(innerwidth)
-
-            
-
-            };    
-
-            d3.json("bar.json", function(data){
-            
-
-                console.log(data.result)
-                render(data.result);
+                };    
+                d3.json("bar.json", function(data){
+                    console.log(data.result)
+                    render(data.result);
         });
 		

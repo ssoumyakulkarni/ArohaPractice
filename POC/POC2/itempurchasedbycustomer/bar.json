@@ -1,0 +1,49 @@
+
+{
+    "item purchaed by customers": [
+        {
+            "name": "Anjani Poultry Farm Dvg",
+            "qty": 1450
+        },
+        {
+            "name": "Sahana Poultry Farm -Mulkalmuru",
+            "qty": 750
+        },
+        {
+            "name": "Cash",
+            "qty": 669
+        },
+        {
+            "name": "Sasidhara Poultry Farm (Dvg)",
+            "qty": 3600
+        },
+        {
+            "name": "Venkatadri Poultry Farm -S.Dr",
+            "qty": 300
+        },
+        {
+            "name": "Sneha Poultry Farm (Dvg)",
+            "qty": 3650
+        },
+        {
+            "name": "S.M Star Hatcheries",
+            "qty": 3900
+        },
+        {
+            "name": "S.L.N. Poultry Farm Cnp",
+            "qty": 875
+        },
+        {
+            "name": "Sri Jagadamba Poultry Farm",
+            "qty": 2100
+        },
+        {
+            "name": "Sanmuga Sai Poultry Farm",
+            "qty": 450
+        },
+        {
+            "name": "Venkateshwara Poultry Farm(Jagdeesh )",
+            "qty": 825
+        }
+    ]
+}
