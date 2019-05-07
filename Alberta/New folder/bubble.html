@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <meta charset="utf=8">
+    <style>
+        * {
+            font-family: "Helvatic Neue";
+        }
+        select{
+            display: block;
+        }
+        p, text{
+            font-size: 0.85em;
+        }
+        svg{
+            background: #f1f1f13b;
+        }
+        div.tooltip {	
+            position: absolute;			
+            text-align: center;			
+            width: 80px;					
+            height: 60px;					
+            padding: 2px;				
+            font: 12px sans-serif;		
+            background: lightsteelblue;	
+            border: 0px;		
+            border-radius: 8px;			
+            pointer-events: none;			
+        }
+        .title {
+            font-size: 1.5em;
+            text-anchor: middle;
+
+            
+        }
+        .circle {
+            opacity: 0.8;
+        }
+    </style>
+    <body>
+        <div id="chart"><div id="ctext"></div></div>
+        
+
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="bubble.js"></script>
+    </body>
+</html>

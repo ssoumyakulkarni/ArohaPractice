@@ -1,0 +1,101 @@
+  table {
+    font-family: "Helvetica", "Lucida Sans", "Lucida Sans Unicode", "Luxi Sans", Tahoma, sans-serif;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  table {
+    margin: auto;
+  }
+  table, td, th {
+    padding: 7px;
+    text-align: center;
+    border: 1px solid rgb(8,48,107);
+  }
+  th {
+    background-color: rgb(8,81,156);
+    color: white;
+  }
+
+
+
+  text {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    fill: white;
+    text-anchor: middle;
+ }
+
+ #pie1 {    
+	position:absolute;
+	top:10px;
+	left:50px;
+	width:600px;
+  height: 600px; 
+ }
+
+#pie2 {    
+	position:absolute;
+	top:10px;
+	left:510px;
+	width:600px;
+	height: 600px; 
+}
+
+#table {
+  position:absolute;
+  bottom:200;
+  width:100%;
+  height:60px;   /* Height of the footer */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*pie css*/
+
+
+
+
+ .arc text{
+  font: 12px sans-serif;
+  text-anchor: middle;
+}
+
+.arc path{
+  stroke: #fff;
+  opacity: 0.9;
+}
+
+.arc2 text{
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.arc2 path{
+  stroke: #fff
+}
+
+.title {
+  /* font-size: 1.5em; */
+  text-anchor: middle;
+  font: 20px sans-serif;
+
+  
+}

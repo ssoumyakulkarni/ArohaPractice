@@ -1,0 +1,57 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        TableWithChart
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <svg width="700" height="500"></svg>
+    <script>
+       
+                
+        // var data=[{'cat': 'C', 'counts': 3756},
+        //             {'cat': 'B', 'counts': 1265},
+        //             {'cat': 'A', 'counts': 693}
+        //         ];
+                var data = [2, 4, 8, 10];
+
+                var svg = d3.select("svg"),
+                    width = svg.attr("width"),
+                    height = svg.attr("height"),
+                    radius = Math.min(width, height) / 2,
+                    g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+            
+                var color = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c']);
+            
+                // Generate the pie
+                var pie = d3.pie();
+            
+                // Generate the arcs
+                var arc = d3.arc()
+                            .innerRadius(0)
+                            .outerRadius(radius);
+            
+                //Generate groups
+                var arcs = g.selectAll("arc")
+                            .data(pie(data))
+                            .enter()
+                            .append("g")
+                            .attr("class", "arc")
+            
+                //Draw arc paths
+                arcs.append("path")
+                    .attr("fill", function(d, i) {
+                        return color(i);
+                    })
+                    .attr("d", arc);
+
+
+    </script>
+</body>
+</html>

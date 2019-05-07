@@ -1,0 +1,34 @@
+body{
+    background-color: rgb(236, 236, 231);
+    font: 12px Arial;
+}
+
+td, th {
+    padding: 1px 4px;
+    border: 1px black solid;
+}
+
+#pie1 {    
+	position:absolute;
+	top:10px;
+	left:10px;
+	width:400px;
+	height: 400px; 
+}
+
+#pie2 {    
+	position:absolute;
+	top:10px;
+	left:410px;
+	width:400px;
+	height: 400px; 
+}
+
+
+
+#table {    
+	position:absolute;
+	top:410px;
+	left:10px;
+	height: 200px;
+}

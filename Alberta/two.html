@@ -1,0 +1,88 @@
+  <!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>Pie sort</title>
+</head>
+
+<style>
+
+  text {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    fill: white;
+    text-anchor: middle;
+ }
+
+  .container1 {
+     float: left;
+ }
+
+  .container2 {
+    float: right;
+ }
+
+ </style>
+
+ <body>
+
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <div class="container1" id="svg1"></div>
+    <div class="container2" id="svg2"></div>
+    <script>
+        
+    var dataset1=[{'cat': 'C', 'counts': 3756},
+ {'cat': 'B', 'counts': 1265},
+ {'cat': 'A', 'counts': 693}];
+
+ var dataset2=[{'cat': 'C', 'counts': 3418},
+ {'cat': 'B', 'counts': 1395},
+ {'cat': 'A', 'counts': 901}];
+
+
+ var color = d3.scaleOrdinal()
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"]);
+
+
+      
+  var mentalHealthPie = d3.pie()
+    .value(function(d) {
+      return d.counts
+    })
+    .sort(function(a, b) {
+      return a.cat.localeCompare(b.cat);
+    });
+
+    var arcGenerator = d3.arc()
+    .innerRadius(150)
+    .outerRadius(200);
+  
+  draw("svg1", dataset1);
+  draw("svg2", dataset2);
+
+  function draw(selector, data) {
+  
+  var arcData = mentalHealthPie(data);
+
+  var svg = d3.select("#" + selector)
+    .append("svg")
+    .attr("width", 500)
+    .attr("height", 500)
+    .append("g")
+    .attr("transform", "translate(250,250)")
+
+  svg.selectAll(null)
+    .data(arcData)
+    .enter()
+    .append('path')
+    .style("fill", function(d) {
+      return color(d.data.counts);
+    })
+    .style("stroke", "white")
+    .attr('d', arcGenerator);
+}
+
+</script>
+  </body>
+  </html>

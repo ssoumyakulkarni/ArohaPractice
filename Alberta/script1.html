@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>pie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <style>
+    .arc path {
+    stroke: white;
+}
+    
+    </style>
+</head>
+<body>
+<script>
+
+var data = [
+       {
+	    "name":"pie1",
+        "results": [{'cat': 'C', 'counts': 3756},
+ {'cat': 'B', 'counts': 1265},
+ {'cat': 'A', 'counts': 693}]
+		},
+       {
+	    "name":"pie2",
+        "results": [
+            {"ratio": 0.04, "total": 10, "failures": 0},
+            {"ratio": 0.04, "total": 11, "failures": 1},
+            {"ratio": 0.04, "total": 12, "failures": 1}
+        ]
+		}
+       ]
+	
+	     var width = 300,
+            height = 300,
+            radius = Math.min(width, height) / 2;
+
+        var arc = d3.svg.arc()
+            .outerRadius(radius)
+            .innerRadius(radius - (radius / 2));
+
+        var pie = d3.layout.pie()
+            .sort(null)
+            .value(function(d) { return d.cat; });
+
+        var svg = d3.select("body").selectAll("svg")
+		   .data(data)
+		   .enter()
+		   .append("svg")
+           .attr("width", width)
+           .attr("height", height)
+           .append("g")
+           .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+	    var g = svg.selectAll(".arc")
+            .data(function(d,i) { return pie(d.cat) })
+            .enter().append("g")
+            .attr("class", "arc")
+
+            g.append("path")
+             .attr("d", arc)
+             .style("fill", function(d) { return (d.data.cat > 0) ? "#d63535" : "#22c12d"; });
+ </script>
+    </body>
+    </html>

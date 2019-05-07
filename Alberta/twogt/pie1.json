@@ -1,0 +1,14 @@
+    {
+        "result": [
+            {
+                "cat": "C", "counts": 3756
+            },
+            {
+                "cat": "B", "counts": 1265
+            },
+            
+            {
+                "cat": "A", "counts": 693
+            }
+        ]
+    }    
